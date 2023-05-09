@@ -1,0 +1,16 @@
+<Configuration status="warn">
+    <Appenders>
+        <!-- Console appender configuration -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%highlight{%d{dd-MM-yyyy HH:mm:ss} [%-6p] [%t] %c{3} - %m%n%throwable}{FATAL=white, ERROR=red, WARN=yellow, INFO=blue, DEBUG=green, TRACE=Cyan}" />
+        </Console>
+    </Appenders>import static org.assertj.core.api.Assertions.assertThat;
+
+    <Loggers>
+        <!-- Root logger referring to console appender -->
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>
